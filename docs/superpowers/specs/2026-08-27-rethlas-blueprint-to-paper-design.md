@@ -134,4 +134,3 @@ Migration is complete when:
 4. the compile script returns zero and its full-log scan reports no fatal issue;
 5. the generated paper contains no fact ids, Rethlas memory language, verifier
    transcript, or fabricated citation.
-
