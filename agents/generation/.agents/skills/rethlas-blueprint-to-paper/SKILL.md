@@ -32,6 +32,14 @@ attribution, or known inputs used in the paper. Treat reference files as
 user-provided context, not as verified facts. For PDF references, use an existing
 text extraction under the reference directory; do not inspect PDF binaries.
 
+Before drafting, make a deliverable inventory from the user's request and the
+problem statement: list every named theorem, formula, character, normalization,
+and requested relation. Check each item against `blueprint_verified.md`. A
+missing item is a scope mismatch, even when the verified blueprint correctly
+proves a narrower subproblem. Do not silently publish that subproblem as the
+complete requested paper. Stop and report the exact missing items. The caller may then submit an expanded problem
+through the normal Rethlas proving and verification loop; resume this skill only after a new verified blueprint exists.
+
 ## Required output
 
 Create an isolated paper workspace:
@@ -83,7 +91,8 @@ Never manufacture a reference to make the paper look finished.
 
 ## Drafting workflow
 
-1. Extract the exact headline theorem and list its known inputs.
+1. Extract the exact headline theorem, list its known inputs, and complete the
+   deliverable inventory and scope-mismatch check above.
 2. Choose the smallest adequate structure from `PAPER_STRUCTURE.md`. One theorem
    with a short proof is a note; do not pad it into a long paper.
 3. Plan the logical order. Every symbol used in the theorem must be defined
