@@ -8,6 +8,7 @@ checklist="$skill_dir/references/MATH_REWRITE_CHECKLIST.md"
 style_guide="$skill_dir/references/STYLE_GUIDE.md"
 paper_structure="$skill_dir/references/PAPER_STRUCTURE.md"
 compile_script="$skill_dir/scripts/compile_paper.sh"
+agent_instructions="$generation_root/AGENTS.md"
 
 fail() {
   printf 'FAIL: %s\n' "$1" >&2
@@ -27,6 +28,7 @@ test -f "$paper_structure" || fail "missing $paper_structure"
 test -f "$compile_script" || fail "missing $compile_script"
 
 require_text '^name: rethlas-blueprint-to-paper$' "$skill_file"
+require_text '^description: Use when ' "$skill_file"
 require_text 'blueprint_verified\.md' "$skill_file"
 require_text 'refuse' "$skill_file"
 require_text 'main\.tex' "$skill_file"
@@ -38,6 +40,9 @@ require_text 'Preserve the mathematics' "$style_guide"
 require_text 'fabricat' "$style_guide"
 require_text 'short note' "$paper_structure"
 require_text 'one headline theorem' "$paper_structure"
+require_text '\\tag.*does not.*\\label' "$checklist"
+require_text 'package.*custom control sequence' "$checklist"
+require_text '\$rethlas-blueprint-to-paper' "$agent_instructions"
 
 if rg -q -- 'fact_graph|paper_write|Danus runtime' "$skill_file" "$checklist"; then
   fail 'Danus runtime dependency leaked into the Rethlas-native skill'

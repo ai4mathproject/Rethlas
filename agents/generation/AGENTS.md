@@ -214,6 +214,11 @@ put the proof of this statement here
 
 The main theorem should be written at the end. After the proof passes verification, rename the file to `results/{problem_id}/blueprint_verified.md`.
 
+If the user then explicitly requests a readable standalone LaTeX paper, invoke
+`$rethlas-blueprint-to-paper`. This is an optional post-verification publishing
+step; it must consume the existing `blueprint_verified.md` rather than restart
+the proof-generation loop.
+
 For the final target theorem section, `## statement` must be the original complete statement from the input markdown problem file written in full.
 
 If `## proof` cites an external result, include in the proof text:

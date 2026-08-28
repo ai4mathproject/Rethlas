@@ -48,7 +48,8 @@ Apply this checklist after drafting `main.tex` and before compilation.
 ## Output hygiene
 
 - `main.tex` is a complete standalone `amsart` document.
-- All custom control sequences are declared.
-- Every `\ref` and `\eqref` has a matching label.
+- Every external package needed by a custom control sequence is loaded
+  explicitly, and every project-local control sequence is declared.
+- Every `\ref` and `\eqref` has a matching `\label`; `\tag` does not create a `\label` target, even though it changes the printed number.
 - The abstract contains no citations and does not overload notation.
 - The author block is user-supplied or an explicit neutral placeholder.

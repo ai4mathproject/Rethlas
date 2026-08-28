@@ -1,6 +1,6 @@
 ---
 name: rethlas-blueprint-to-paper
-description: Convert a verified Rethlas blueprint into a readable standalone LaTeX mathematics paper, compile it, and re-verify the paper's mathematical argument.
+description: Use when a verified Rethlas proof blueprint must be turned into a readable standalone LaTeX mathematics paper.
 ---
 
 # Rethlas Blueprint to Paper
@@ -149,4 +149,3 @@ Publication is complete only when `main.tex` compiles, `main.pdf` and `main.log`
 exist, and the paper-level verifier returns `correct` with no critical errors or
 gaps. Otherwise preserve the artifacts and report the precise blocker without
 calling the paper verified.
-
