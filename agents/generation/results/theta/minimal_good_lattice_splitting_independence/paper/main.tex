@@ -1,0 +1,211 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Stab}{Stab}
+
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Independence of the Minimal-Good-Lattice Splitting}
+\author{Author Placeholder}
+\subjclass[2020]{22E50, 22E45}
+\keywords{metaplectic extension, reductive dual pair, lattice model, building}
+\date{}
+
+\begin{document}
+
+\begin{abstract}
+We prove that the splitting of the universal metaplectic extension obtained
+from a minimal good lattice is independent of the choice of that lattice.
+The proof separates the conjugacy supplied by lattice-model naturality from
+the equality supplied by the commuting theorem for the two pullback covers.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Let \(F\) be a non-archimedean local field of odd residual characteristic, and
+let \((G,G')\) be the type-I reductive dual pair under consideration inside the
+symplectic group of a tensor space \(W\). A generalized lattice model attached
+to a pair of building points produces a splitting of the universal
+\(\mathbb C^\times\)-metaplectic extension over the stabilizer of one of those
+points. We show that, when the point on the \(G'\)-side is normalized by a
+minimal good lattice, the resulting splitting does not depend on the chosen
+lattice.
+
+The decisive point is that transport by an element of \(G'\) first gives a
+conjugacy identity in the covering group. Passing from conjugacy to equality
+uses the separate theorem that the pullback covering groups over \(G\) and
+\(G'\) commute elementwise. Thus twisted transport alone does not identify the
+two lattice-model operators.
+
+\section{Setup and known inputs}
+
+Let
+\[
+(G,G')=(U(V,h),U(V',h'))\subseteq \Sp(W)
+\]
+be the type-I reductive dual pair. We work in the universal extension
+\[
+1\longrightarrow \mathbb C^\times
+\longrightarrow \widetilde{\Sp}(W)
+\longrightarrow \Sp(W)
+\longrightarrow 1.
+\]
+Fix \(x\in\mathcal B(G)\) and set
+\[
+K_x:=\Stab_G(x).
+\]
+The building is refined so that \(K_x\) is constant on each open facet. For
+every \(x'\in\mathcal B(G')\), the generalized lattice model associated with
+the tensor lattice function \(\mathcal B_{x,x'}\) supplies a continuous
+group-homomorphic splitting
+\[
+s_{x,x'}\colon K_x\longrightarrow\widetilde{\Sp}(W).
+\]
+Existence and multiplicativity of these splittings are known inputs.
+
+We use four further known inputs. First, the nonempty set
+\(\mathscr M(V')\) of minimal good lattices is one \(G'\)-orbit. Every
+\(\Lambda'\in\mathscr M(V')\) determines a normalized building point
+\(x'_{\Lambda'}\), and
+\[
+x'_{a\Lambda'}=a\,x'_{\Lambda'}
+\qquad(a\in G').
+\]
+Second, tensor-lattice equivariance gives
+\[
+\mathcal B_{x,ax'}=(1\otimes a)\mathcal B_{x,x'}.
+\]
+Third, transport by \(1\otimes a\) gives an isomorphism
+\[
+T_a\colon\mathcal H_{x,x'}\longrightarrow\mathcal H_{x,ax'}
+\]
+satisfying, for every \(g\in K_x\),
+\[
+T_aM_{x,x'}[g]T_a^{-1}=M_{x,ax'}[g].
+\]
+At cover level, for any lift \(\widetilde a\) of \(1\otimes a\), this is the
+conjugacy identity
+\[
+s_{x,ax'}(g)=\widetilde a\,s_{x,x'}(g)\widetilde a^{-1}.
+\]
+Finally, let \(\widetilde G\) and \(\widetilde G'\) denote the pullback
+covering groups over \(G\) and \(G'\), respectively. The known
+commuting-cover theorem states that these two groups commute elementwise
+inside \(\widetilde{\Sp}(W)\). Equivalently, for \(g\in G\), \(a\in G'\),
+and arbitrary lifts \(\widetilde g\) and \(\widetilde a\),
+\[
+[\widetilde a,\widetilde g]=1.
+\]
+This is a theorem about the covering groups and is not inferred from
+commutativity of \(G\) and \(G'\) in the base symplectic group.
+
+\section{Independence theorem}
+
+\begin{theorem}[Minimal-good-lattice splitting independence]
+For \(\Lambda'\in\mathscr M(V')\), define
+\[
+s^{\min}_{x,\Lambda'}:=s_{x,x'_{\Lambda'}}.
+\]
+For every \(\Lambda'_0,\Lambda'_1\in\mathscr M(V')\),
+\[
+s^{\min}_{x,\Lambda'_0}=s^{\min}_{x,\Lambda'_1}
+\]
+as continuous group-homomorphic splittings
+\[
+K_x\longrightarrow\widetilde{\Sp}(W).
+\]
+Hence the common splitting
+\[
+s_x^{\min}\colon K_x\longrightarrow\widetilde{\Sp}(W)
+\]
+is canonically defined.
+\end{theorem}
+
+\begin{proof}
+Fix \(\Lambda'_0,\Lambda'_1\in\mathscr M(V')\). By the
+minimal-good-lattice orbit theorem, there is an element \(a\in G'\) such that
+\[
+\Lambda'_1=a\Lambda'_0.
+\]
+The normalized building-point equivariance gives
+\[
+x'_{\Lambda'_1}=x'_{a\Lambda'_0}=a\,x'_{\Lambda'_0}.
+\]
+Write \(x'_0=x'_{\Lambda'_0}\). Then \(x'_{\Lambda'_1}=a x'_0\).
+
+Choose any lift \(\widetilde a\) of \(1\otimes a\) to
+\(\widetilde{\Sp}(W)\). Tensor-lattice equivariance gives
+\[
+\mathcal B_{x,a x'_0}=(1\otimes a)\mathcal B_{x,x'_0}.
+\]
+The naturality input therefore gives, for every \(g\in K_x\),
+\[
+T_aM_{x,x'_0}[g]T_a^{-1}=M_{x,a x'_0}[g].
+\]
+At the metaplectic-cover level this is precisely
+\begin{equation}
+s_{x,a x'_0}(g)
+=\widetilde a\,s_{x,x'_0}(g)\widetilde a^{-1}.
+\label{eq:transport}
+\end{equation}
+This is the lattice-model transport step. It does not assert that \(T_a\)
+identifies the two operators inside one fixed Heisenberg model: \(T_a\) is
+twisted by the symplectic action \(1\otimes a\).
+
+For \(g\in K_x\), the element \(s_{x,x'_0}(g)\) is a lift of \(g\) and hence
+belongs to the pullback cover over \(G\). The element \(\widetilde a\) belongs
+to the pullback cover over \(G'\). The known commuting-cover theorem thus gives
+\[
+[\widetilde a,s_{x,x'_0}(g)]=1.
+\]
+Consequently,
+\begin{equation}
+\widetilde a\,s_{x,x'_0}(g)\widetilde a^{-1}=s_{x,x'_0}(g).
+\label{eq:commuting}
+\end{equation}
+This is a separate cover-level step. It uses the commuting-cover theorem and
+not merely commutativity of the two groups in the base symplectic group.
+
+Combining \eqref{eq:transport}, \eqref{eq:commuting}, and
+\[
+s^{\min}_{x,\Lambda'_1}
+=s_{x,x'_{\Lambda'_1}}
+=s_{x,a x'_0},
+\]
+we obtain, for every \(g\in K_x\),
+\[
+s^{\min}_{x,\Lambda'_1}(g)
+=s_{x,a x'_0}(g)
+=s_{x,x'_0}(g)
+=s^{\min}_{x,\Lambda'_0}(g).
+\]
+Therefore
+\[
+s^{\min}_{x,\Lambda'_0}=s^{\min}_{x,\Lambda'_1}
+\]
+as maps from \(K_x\) to \(\widetilde{\Sp}(W)\). Each map \(s_{x,x'}\)
+supplied by the generalized lattice model is already continuous,
+group-homomorphic, and a splitting. Hence the common map
+\[
+s_x^{\min}:=s^{\min}_{x,\Lambda'}
+\]
+has all three properties for every \(\Lambda'\in\mathscr M(V')\). Its
+independence of the choice of \(\Lambda'\) follows from the equality just
+proved, so the splitting is canonical.
+\end{proof}
+
+\begin{remark}
+The conclusion follows from the stated generalized-lattice-model properties
+and the known commuting-cover theorem. The latter is a nontrivial input and is
+deliberately not reproved here.
+\end{remark}
+
+\end{document}
